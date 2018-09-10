@@ -137,28 +137,28 @@ defmodule MyApp.Scene.Splash do
 #   end
 
    def handle_input( {:key, {"W", _, _}}, _context, state ) do
-     IO.puts("W")
+     #IO.puts("W")
       {x,y} = Graph.get!(state.graph, :left).transforms.translate
        graph = Graph.modify( state.graph, :left, &update_opts(&1, translate: {x,y-12}) )
        |> push_graph()
      {:noreply, %{ state | graph: graph }}
    end
    def handle_input( {:key, {"S", _, _}}, _context, state ) do
-     IO.puts("S")
+     #IO.puts("S")
       {x,y} = Graph.get!(state.graph, :left).transforms.translate
        graph = Graph.modify( state.graph, :left, &update_opts(&1, translate: {x,y+12}) )
        |> push_graph()
      {:noreply, %{ state | graph: graph }}
    end
    def handle_input( {:key, {"I", _, _}}, _context, state ) do
-     IO.puts("I")
+     #IO.puts("I")
       {x,y} = Graph.get!(state.graph, :right).transforms.translate
        graph = Graph.modify( state.graph, :right, &update_opts(&1, translate: {x,y-12}) )
        |> push_graph()
      {:noreply, %{ state | graph: graph }}
    end
    def handle_input( {:key, {"K", _, _}}, _context, state ) do
-     IO.puts("K")
+     #IO.puts("K")
       {x,y} = Graph.get!(state.graph, :right).transforms.translate
        graph = Graph.modify( state.graph, :right, &update_opts(&1, translate: {x,y+12}) )
        |> push_graph()
